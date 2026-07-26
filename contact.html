@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — VMK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">VMK<span>.</span>dev</div>
+    <div class="navlinks">
+      <a href="index.html" class="">Home</a>
+      <a href="work.html" class="">Work</a>
+      <a href="reliability.html" class="">Reliability</a>
+      <a href="skills.html" class="">Skills</a>
+      <a href="about.html" class="">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-ghost" style="padding:8px 16px;">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap page-header">
+    <div class="eyebrow">// get in touch</div>
+    <h1>Let's talk about what you're building</h1>
+    <p class="hero-sub"></p>
+  </div>
+
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-panel reveal">
+        <p style="color:var(--muted);max-width:56ch;">Open to freelance projects, contract work, and full-time roles where correctness and long-term maintainability actually matter.</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="label">Email</div>
+            <div class="val"><a href="mailto:your.email@example.com">your.email@example.com</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="label">LinkedIn</div>
+            <div class="val"><a href="#" target="_blank">linkedin.com/in/your-handle</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="label">GitHub</div>
+            <div class="val"><a href="https://github.com/VictorMK22" target="_blank">github.com/VictorMK22</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="label">Location</div>
+            <div class="val">Available remote</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+    <span>&copy; 2026 VMK &mdash; built with React, Node.js &amp; MongoDB in daily use.</span>
+    <span>status: operational</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

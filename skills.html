@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skills — VMK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">VMK<span>.</span>dev</div>
+    <div class="navlinks">
+      <a href="index.html" class="">Home</a>
+      <a href="work.html" class="">Work</a>
+      <a href="reliability.html" class="">Reliability</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="about.html" class="">About</a>
+      <a href="contact.html" class="">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-ghost" style="padding:8px 16px;">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap page-header">
+    <div class="eyebrow">// stack</div>
+    <h1>The tools, organized by layer</h1>
+    <p class="hero-sub">Full-stack in the literal sense &mdash; comfortable in the browser, the server, and the infrastructure that connects them.</p>
+  </div>
+
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="skill-cols">
+        <div class="skill-col reveal">
+          <h4>FRONTEND</h4>
+          <ul>
+            <li>React + TypeScript</li>
+            <li>Vite</li>
+            <li>Framer Motion</li>
+            <li>shadcn/ui</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal">
+          <h4>BACKEND</h4>
+          <ul>
+            <li>Node.js / Express</li>
+            <li>MongoDB</li>
+            <li>BullMQ (queues &amp; workers)</li>
+            <li>REST API design</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal">
+          <h4>REAL-TIME &amp; INTEGRATIONS</h4>
+          <ul>
+            <li>Socket.io</li>
+            <li>Yjs (collaborative editing)</li>
+            <li>WhatsApp Business Cloud API</li>
+            <li>Zoho Mail OAuth</li>
+          </ul>
+        </div>
+        <div class="skill-col reveal">
+          <h4>DEPLOYMENT &amp; OPS</h4>
+          <ul>
+            <li>Vercel</li>
+            <li>cPanel environments</li>
+            <li>Process management (ts-node-dev, etc.)</li>
+            <li>Production debugging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+    <span>&copy; 2026 VMK &mdash; built with React, Node.js &amp; MongoDB in daily use.</span>
+    <span>status: operational</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

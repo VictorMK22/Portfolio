@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>VMK — Full-Stack Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">VMK<span>.</span>dev</div>
+    <div class="navlinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="work.html" class="">Work</a>
+      <a href="reliability.html" class="">Reliability</a>
+      <a href="skills.html" class="">Skills</a>
+      <a href="about.html" class="">About</a>
+      <a href="contact.html" class="">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-ghost" style="padding:8px 16px;">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hero-flex">
+      <div class="hero-content">
+        <div class="status-strip">
+          <span class="dot"></span>
+          <span>ALL SYSTEMS OPERATIONAL &mdash; 4 PRODUCTION APPS &middot; LAST DEPLOY: THIS WEEK</span>
+        </div>
+        <h1>I build software that keeps <span class="accent">running</span> after launch day.</h1>
+        <p class="hero-sub">Full-stack developer working across the whole stack &mdash; React/TypeScript frontends, Node.js and PHP backends, and the integrations that make a product actually useful. I build and maintain an accounting system and an AI-assisted farm management platform, alongside websites like PeakInsights and the Valence Capital site, all in active use.</p>
+        <div class="hero-cta">
+          <a href="work.html" class="btn btn-primary">View the systems &rarr;</a>
+          <a href="contact.html" class="btn btn-ghost">Get in touch</a>
+        </div>
+      </div>
+      <img class="hero-photo reveal" src="assets/img/profile.jpg" alt="Portrait of VMK">
+    </div>
+
+    <div class="panel reveal">
+      <div class="panel-head">
+        <span>services.status</span>
+        <span class="live">&#9679; live</span>
+      </div>
+      <div class="service-row">
+        <div class="service-name"><span class="dot" style="animation:none;"></span>PeakInsights</div>
+        <div class="service-meta">React &middot; Vite &middot; PHP &middot; TailwindCSS <span class="badge badge-up">deployed</span></div>
+      </div>
+      <div class="service-row">
+        <div class="service-name"><span class="dot" style="animation:none;"></span>PeakBooks</div>
+        <div class="service-meta">React &middot; Node.js &middot; MongoDB &middot; Vercel <span class="badge badge-up">deployed</span></div>
+      </div>
+      <div class="service-row">
+        <div class="service-name"><span class="dot" style="animation:none;"></span>Elmer Farms</div>
+        <div class="service-meta">React &middot; Node.js &middot; Prisma &middot; PostgreSQL &middot; Docker <span class="badge badge-up">deployed</span></div>
+      </div>
+      <div class="service-row">
+        <div class="service-name"><span class="dot" style="animation:none;"></span>Valence Capital</div>
+        <div class="service-meta">React &middot; Vite &middot; TailwindCSS <span class="badge badge-up">deployed</span></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+    <span>&copy; 2026 VMK &mdash; built with React, Node.js &amp; MongoDB in daily use.</span>
+    <span>status: operational</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reliability — VMK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">VMK<span>.</span>dev</div>
+    <div class="navlinks">
+      <a href="index.html" class="">Home</a>
+      <a href="work.html" class="">Work</a>
+      <a href="reliability.html" class="active">Reliability</a>
+      <a href="skills.html" class="">Skills</a>
+      <a href="about.html" class="">About</a>
+      <a href="contact.html" class="">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-ghost" style="padding:8px 16px;">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap page-header">
+    <div class="eyebrow">// reliability log</div>
+    <h1>Building it is half the job. Keeping it correct is the other half.</h1>
+    <p class="hero-sub">A sample of production issues found and resolved &mdash; the kind of work that doesn't show up in a project list but is most of what real software engineering is.</p>
+  </div>
+
+
+  <section id="reliability">
+    <div class="wrap">
+      <div class="log reveal">
+        <div class="log-entry">
+          <div class="log-tag fixed">FIXED</div>
+          <div class="log-body"><strong>Ledger cross-posting from fuzzy account matching</strong><span>Journal entries were matching loosely and cross-posting across every Chart of Accounts entry, throwing off the General Ledger vs. Trial Balance. Resolved with strict accountCode matching and a targeted repair script for already-corrupted balances.</span></div>
+        </div>
+        <div class="log-entry">
+          <div class="log-tag fixed">FIXED</div>
+          <div class="log-body"><strong>Silent failure on large API responses</strong><span>User lists were returning empty with no visible error &mdash; the payload was silently too large due to embedded base64 profile images. Fixed by excluding images from the API response and adding client-side compression on upload.</span></div>
+        </div>
+        <div class="log-entry">
+          <div class="log-tag fixed">FIXED</div>
+          <div class="log-body"><strong>Session validator clearing auth incorrectly</strong><span>Any non-401 error was being treated as an expired session, logging users out unnecessarily. Narrowed the validator to only clear auth on genuine authentication failures.</span></div>
+        </div>
+        <div class="log-entry">
+          <div class="log-tag fixed">FIXED</div>
+          <div class="log-body"><strong>Crash from unpopulated reference fields</strong><span>The Emails page crashed whenever a sender reference wasn't populated on the returned document &mdash; a common failure mode in MongoDB-backed apps that don't guard against missing joins.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
+    <span>&copy; 2026 VMK &mdash; built with React, Node.js &amp; MongoDB in daily use.</span>
+    <span>status: operational</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
