@@ -1,68 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About — VMK</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-<header>
-  <nav>
-    <div class="logo">VMK<span>.</span>dev</div>
-    <div class="navlinks">
-      <a href="index.html" class="">Home</a>
-      <a href="work.html" class="">Work</a>
-      <a href="reliability.html" class="">Reliability</a>
-      <a href="skills.html" class="">Skills</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html" class="">Contact</a>
-    </div>
-    <a href="contact.html" class="btn btn-ghost" style="padding:8px 16px;">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <div class="wrap page-header">
-    <div class="eyebrow">// about</div>
-    <h1>About</h1>
-    <p class="hero-sub"></p>
-  </div>
-
-
-  <section id="about">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-photo reveal">
-          <img src="assets/img/profile.jpg" alt="Portrait of VMK">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — VMK</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">VMK<span>.</span>dev</div>
+        <div class="navlinks">
+          <a href="index.html" class="">Home</a>
+          <a href="work.html" class="">Work</a>
+          <a href="reliability.html" class="">Reliability</a>
+          <a href="skills.html" class="">Skills</a>
+          <a href="about.html" class="active">About</a>
         </div>
-        <div class="about-text reveal">
-          <p>I'm a full-stack developer who prefers <strong>shipping working software</strong> over polishing a slide about it. Most of my time goes into products I've built and maintained from the ground up: an accounting platform used for real bookkeeping, an AI-assisted farm management system, and websites like PeakInsights.</p>
-          <p>I care more about <strong>correctness under real usage</strong> than about how a feature looks in a demo &mdash; the projects in the work section include as much debugging and reconciliation work as new feature development, because that's what keeps software trustworthy once people depend on it.</p>
-          <p>I work in small, targeted changes rather than sweeping rewrites, and I'd rather hand over one correctly-fixed file than a large diff that's hard to review.</p>
-        </div>
+        <a href="contact.html" class="btn btn-ghost" style="padding: 8px 16px"
+          >Contact</a
+        >
+      </nav>
+    </header>
+
+    <main>
+      <div class="wrap page-header">
+        <div class="eyebrow">// about</div>
+        <h1>About</h1>
+        <p class="hero-sub"></p>
       </div>
-    </div>
-  </section>
 
-</main>
+      <section id="about">
+        <div class="wrap">
+          <div class="about-grid">
+            <div class="about-photo reveal">
+              <img src="assets/img/profile.jpg" alt="Portrait of VMK" />
+            </div>
+            <div class="about-text reveal">
+              <p>
+                I'm a full-stack developer who prefers
+                <strong>shipping working software</strong> over polishing a
+                slide about it. Most of my time goes into products I've built
+                and maintained from the ground up: an accounting platform used
+                for real bookkeeping, an AI-assisted farm management system, and
+                websites like PeakInsights.
+              </p>
+              <p>
+                I care more about
+                <strong>correctness under real usage</strong> than about how a
+                feature looks in a demo &mdash; the projects in the work section
+                include as much debugging and reconciliation work as new feature
+                development, because that's what keeps software trustworthy once
+                people depend on it.
+              </p>
+              <p>
+                I work in small, targeted changes rather than sweeping rewrites,
+                and I'd rather hand over one correctly-fixed file than a large
+                diff that's hard to review.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-<footer>
-  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;">
-    <span>&copy; 2026 VMK &mdash; built with React, Node.js &amp; MongoDB in daily use.</span>
-    <span>status: operational</span>
-  </div>
-</footer>
+    <footer>
+      <div
+        class="wrap"
+        style="
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 8px;
+        "
+      >
+        <span
+          >&copy; 2026 VMK &mdash; built with React, Node.js &amp; MongoDB in
+          daily use.</span
+        >
+        <span>status: operational</span>
+      </div>
+    </footer>
 
-<script>
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:0.15});
-  revealEls.forEach(el=>io.observe(el));
-</script>
-
-</body>
+    <script>
+      const revealEls = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      revealEls.forEach((el) => io.observe(el));
+    </script>
+  </body>
 </html>
